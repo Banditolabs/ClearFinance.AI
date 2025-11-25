@@ -1,0 +1,15 @@
+{
+  "name": "clear_finance_ai",
+  "version": "1.0.0",
+  "description": "A financial dashboard with locally run ai",
+  "license": "ISC",
+  "author": "Joshuagosst@gmail.com",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "electron": "^39.2.3"
+  }
+}
