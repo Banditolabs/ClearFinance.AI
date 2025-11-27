@@ -1,1 +1,9 @@
+dist/
+dist-electron/
+
 node_modules/
+
+sqlite/*.db
+sqlite/*.sqlite
+sqlite/*.db-shm
+sqlite/*.db-wal

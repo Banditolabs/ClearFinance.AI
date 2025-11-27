@@ -7,9 +7,36 @@
   "type": "commonjs",
   "main": "main.js",
   "scripts": {
-    "test": "test"
+    "dev": "concurrently -k \"npm:dev:vite\" \"npm:dev:electron\"",
+    "dev:vite": "vite",
+    "dev:electron": "electronmon .",
+    "type-check": "tsc --noEmit",
+    "build": "vite build",
+    "build:electron": "tsc -p electron/tsconfig.json",
+    "package": "electron-builder",
+    "start": "electron ."
   },
   "devDependencies": {
-    "electron": "^39.2.3"
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "electron": "^39.2.3",
+    "electron-builder": "^26.0.12",
+    "electron-reloader": "^1.2.3",
+    "electron-vite": "^4.0.1",
+    "electronmon": "^2.0.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "better-sqlite3": "^12.4.6",
+    "papaparse": "^5.5.3",
+    "plaid": "^39.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "uuid": "^13.0.0"
   }
 }

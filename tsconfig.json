@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@electron/*": ["electron/*"],
+      "@src/*": ["src/*"],
+      "@backend/*": ["backend/*"],
+      "@shared/*": ["shared/*"],
+      "@modules/*": ["modules/*"]
+    },
+
+    "types": ["node"]
+  },
+  "include": [
+    "electron/**/*",
+    "src/**/*",
+    "backend/**/*",
+    "shared/**/*",
+    "modules/**/*",
+    "vite.config.*",
+    "vitest.config.*",
+    "electron.vite.config.*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build"
+  ]
+}
