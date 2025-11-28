@@ -19,13 +19,12 @@
     "skipLibCheck": true,
     "noEmit": true,
 
-    "baseUrl": ".",
     "paths": {
-      "@electron/*": ["electron/*"],
-      "@src/*": ["src/*"],
-      "@backend/*": ["backend/*"],
-      "@shared/*": ["shared/*"],
-      "@modules/*": ["modules/*"]
+      "@electron/*": ["./electron/*"],
+      "@src/*": ["./src/*"],
+      "@backend/*": ["./backend/*"],
+      "@shared/*": ["./shared/*"],
+      "@modules/*": ["./modules/*"]
     },
 
     "types": ["node"]
