@@ -5,7 +5,7 @@
   "license": "ISC",
   "author": "Joshuagosst@gmail.com",
   "type": "commonjs",
-  "main": "main.js",
+  "main": "electron/main.ts",
   "scripts": {
     "dev": "concurrently -k \"npm:dev:vite\" \"npm:dev:electron\"",
     "dev:vite": "vite",
@@ -31,6 +31,7 @@
     "vite": "^7.2.4"
   },
   "dependencies": {
+    "@types/better-sqlite3": "^7.6.13",
     "axios": "^1.13.2",
     "better-sqlite3": "^12.4.6",
     "papaparse": "^5.5.3",
