@@ -2,21 +2,26 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "target": "ESNext",
-    "module": "Node16",
-    "moduleResolution": "node16",
     "lib": ["ESNext"],
+
+    "module": "CommonJS",
+    "moduleResolution": "node",
+
+    "rootDir": "..",
     "outDir": "../dist-electron",
+
+    "baseUrl": "..",
+    "paths": {
+      "@main/*": ["src/main/*"],
+      "@modules/*": ["modules/*"],
+      "@electron/*": ["electron/*"]
+    },
+
     "noEmit": false,
+    "noEmitOnError": true,
+    "sourceMap": true,
     "types": ["node"]
   },
-  "include": [
-    "../electron/**/*",
-    "../backend/**/*",
-    "../modules/**/*"
-  ],
-  "exclude": [
-    "../src",
-    "../dist",
-    "../node_modules"
-  ]
+  "include": ["../electron/**/*", "../src/main/**/*", "../modules/**/*"],
+  "exclude": ["../src/renderer/**/*", "../node_modules", "../dist", "../dist-electron"]
 }

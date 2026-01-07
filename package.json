@@ -5,14 +5,14 @@
   "license": "ISC",
   "author": "Joshuagosst@gmail.com",
   "type": "commonjs",
-  "main": "electron/main.ts",
+  "main": "dist-electron/electron/main.js",
   "scripts": {
     "dev": "concurrently -k \"npm:dev:vite\" \"npm:dev:electron\"",
     "dev:vite": "vite",
     "dev:electron": "electronmon .",
     "type-check": "tsc --noEmit",
     "build": "vite build",
-    "build:electron": "tsc -p electron/tsconfig.json",
+    "build:electron": "tsc -p electron/tsconfig.json && tsc-alias -p electron/tsconfig.json",
     "package": "electron-builder",
     "start": "electron ."
   },
@@ -27,6 +27,7 @@
     "electron-vite": "^4.0.1",
     "electronmon": "^2.0.4",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.16",
     "typescript": "^5.9.3",
     "vite": "^7.2.4"
   },

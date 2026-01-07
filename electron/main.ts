@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from 'electron';
+import { getDb, closeDb } from "@main/core/db/sqliteClient";
 import path from 'node:path'
 
 const createWindow = async () => {
@@ -7,11 +8,11 @@ const createWindow = async () => {
         height: 600
     })
 
-    await win.loadFile(path.join(__dirname, "../index.html"));
-    return win;
+    await win.loadFile('index.html')
 }
 
 app.whenReady().then(async () => {
+    getDb();
     await createWindow()
 
     app.on('activate', () => {
@@ -20,6 +21,10 @@ app.whenReady().then(async () => {
         }
     })
 })
+
+app.on("before-quit", () => {
+    closeDb();
+});
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {

@@ -1,47 +1,44 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
+
     "module": "ESNext",
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
 
     "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noEmit": true,
 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "skipLibCheck": true,
-    "noEmit": true,
 
+    "baseUrl": ".",
     "paths": {
-      "@electron/*": ["./electron/*"],
-      "@src/*": ["./src/*"],
-      "@backend/*": ["./backend/*"],
-      "@shared/*": ["./shared/*"],
-      "@modules/*": ["./modules/*"]
+      "@electron/*": ["electron/*"],
+      "@main/*": ["src/main/*"],
+      "@renderer/*": ["src/renderer/*"],
+      "@modules/*": ["modules/*"]
     },
 
     "types": ["node"]
   },
   "include": [
-    "electron/**/*",
-    "src/**/*",
-    "backend/**/*",
-    "shared/**/*",
+    "src/renderer/**/*",
     "modules/**/*",
+    "electron/**/*.d.ts",
     "vite.config.*",
-    "vitest.config.*",
-    "electron.vite.config.*"
+    "vitest.config.*"
   ],
   "exclude": [
     "node_modules",
     "dist",
-    "build"
+    "dist-electron",
+    "build",
+    "src/main/**/*",
+    "electron/**/*"
   ]
 }
