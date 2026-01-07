@@ -1,5 +1,6 @@
 dist/
 dist-electron/
+.idea
 
 node_modules/
 
@@ -8,4 +9,3 @@ sqlite/*.sqlite
 sqlite/*.db-shm
 sqlite/*.db-wal
 !sqlite/.gitkeep
-

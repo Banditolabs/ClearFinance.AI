@@ -1,7 +1,8 @@
-const { app, BrowserWindow } = require('electron/main')
-const path = require('node:path')
+import {app, BrowserWindow} from 'electron';
+import path from 'node:path'
 
-function createWindow () {
+
+async function createWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
@@ -10,18 +11,21 @@ function createWindow () {
     }
   })
 
-  win.loadFile('index.html')
+    await win.loadFile('index.html');
 }
 
-app.whenReady().then(() => {
-  createWindow()
+app.whenReady().then(async () => {
+    await createWindow()
 
-  app.on('activate', () => {
+  app.on('activate', async () => {
     if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow()
+        await createWindow()
     }
   })
 })
+
+app.on("before-quit", () => {
+});
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
