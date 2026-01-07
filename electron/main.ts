@@ -1,34 +1,28 @@
-import {app, BrowserWindow} from 'electron';
+import { app, BrowserWindow } from 'electron';
 import path from 'node:path'
 
+const createWindow = async () => {
+    const win = new BrowserWindow({
+        width: 800,
+        height: 600
+    })
 
-async function createWindow () {
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }
-  })
-
-    await win.loadFile('index.html');
+    await win.loadFile(path.join(__dirname, "../index.html"));
+    return win;
 }
 
 app.whenReady().then(async () => {
     await createWindow()
 
-  app.on('activate', async () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-        await createWindow()
-    }
-  })
+    app.on('activate', () => {
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createWindow()
+        }
+    })
 })
 
-app.on("before-quit", () => {
-});
-
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
+    if (process.platform !== 'darwin') {
+        app.quit()
+    }
 })
