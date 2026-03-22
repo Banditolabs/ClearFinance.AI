@@ -43,7 +43,7 @@ export function runMigrations(
   if (downgradeGuard) {
     const known = new Set(migrationIds);
     const unknown = alreadyApplied.filter((id) => !known.has(id));
-    if (unkown.length > 0) {
+    if (unknown.length > 0) {
       throw new Error(
         `Database schema is newer than this app build. ` +
         `Unknown migration(s): ${unknown.join(", ")}. ` +
