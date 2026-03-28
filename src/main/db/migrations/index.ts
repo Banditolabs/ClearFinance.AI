@@ -1,10 +1,11 @@
 export type { Migration } from "./types";
+import m_20260325015452_init from "./20260325015452_init"
 
 export const migrations = [
-
+  m_20260325015452_init,
 ];
 
-/** Useful for guards / debugging */
+/** For debugging */
 export const migrationIds = migrations.map((m) => m.id);
 
 function validateMigrationRegtistry() {
