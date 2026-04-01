@@ -1,11 +1,45 @@
-dist/
-dist-electron/
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+build
+out
+.webpack
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+!.vscode/extensions.json
 .idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-node_modules/
+# Caches
+.eslintcache
+.tsbuildinfo
+*.tsbuildinfo
 
-sqlite/*.db
-sqlite/*.sqlite
-sqlite/*.db-shm
-sqlite/*.db-wal
-!sqlite/.gitkeep
+# Electron packager / builder output
+release
+release-builds
+
+# Coverage
+coverage
