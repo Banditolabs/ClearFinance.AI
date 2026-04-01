@@ -1,8 +1,8 @@
 export type { Migration } from "./types";
-import m_20260325015452_init from "./20260325015452_init"
+import m_20260331194356_initial_schema from "./20260331194356_initial_schema";
 
 export const migrations = [
-  m_20260325015452_init,
+  m_20260331194356_initial_schema,
 ];
 
 /** For debugging */
