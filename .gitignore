@@ -7,7 +7,7 @@ build
 out
 .webpack
 
-# Environment & secrets
+# Environment & secrets,
 .env
 .env.*
 !.env.example
@@ -43,3 +43,4 @@ release-builds
 
 # Coverage
 coverage
+>>>>>>> initial_database_migration
